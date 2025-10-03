@@ -1,4 +1,11 @@
 function Intro() {
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-l from-black to-gray-900">
             <div className="text-center max-w-2xl mx-auto px-4">
@@ -9,7 +16,7 @@ function Intro() {
                     I'm a full stack software engineer.
                 </p>
 
-                <button className="bg-gradient-to-r from-slate-600 to-gray-500 hover:from-slate-700 hover:to-gray-900 text-white py-2 px-20 transition-all duration-200 rounded-lg">
+                <button onClick={() => scrollToSection("about")} className="bg-gradient-to-r from-slate-600 to-gray-500 hover:from-slate-700 hover:to-gray-900 text-white py-2 px-20 transition-all duration-200 rounded-lg">
                     View my work
                 </button>
             </div>
